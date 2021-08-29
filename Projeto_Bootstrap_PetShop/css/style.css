@@ -1,0 +1,85 @@
+#row1{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#logo{
+    width: 150px;
+    margin: 2%;
+}
+#frase_empresa, #frase_frete{
+    color: #8B6127;
+    margin-right: 10px;
+}
+
+/* menu */
+#barra_navegacao{
+    background-color: #573b15;
+}
+
+.navbar-nav > li>a{
+  color: #f5e7d4;
+}
+
+.navbar-nav > li:hover >a {
+    color: #573b15;
+    background-color: #f5e7d4;
+}
+
+/* main */
+#lista_objetivos li, #lista_acreditamos li{
+    list-style-type: none;
+    padding-left: 2px;
+}
+/* banner */
+/* Produtos */
+#mensagem_empresa, #produtos, #cobertores, #colchonetes{
+    background-color: #f7f2ec;
+    color:#573b15;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+p{
+    text-indent: 1.2rem;;
+}
+
+/* estilização do scrolltop */
+#scroll-top-btn {
+    margin-right: 30px;
+    margin-bottom: 75px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+}
+
+#scroll-top-btn img {
+    height: 50px;
+}
+
+/* Estilo página cadastro */
+#titulo_cadastro{
+    color:#573b15
+}
+
+/* estilo página parceiros */
+#titulo_videos{
+    color: #573b15;
+    padding-top: 20px;
+    text-indent: 1.2rem;
+}
+
+#titulo_videos{
+    padding-top: 20px;
+    text-indent: 1.2rem;
+}
+main{
+    color:#573b15;
+}
+
+/* estilo formulário */
+.erro{
+    color: red;
+}

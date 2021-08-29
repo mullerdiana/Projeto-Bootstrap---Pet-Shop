@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- comentários sobre os requisitos específicos 
+  1)Jquery : utilizar um scroll que a partir de  400px do topo do body apareça uma seta ao lado direito da pagina que funciona como retorno suave para o inicio da pagina, aplicar essa função na pagina inicial do projeto: linha 304 do html, chamada do script na linha 327 e estilo na linha 47 do style.css (linkado na linha 15 do html da index).
+  2)JavaScript: validações - funções sendo chamadas no arquivo formulario.html (nas linhas 94, 99, 105, 110, 115, 120, 125 e 130) e seus respectivos scripts no arquivo validacoes.js (linkado na linha 201 de formulario.html)
+  3)Css: Estilizar o rodapé usando exclusivamente css - estilização realizada pelo css externo footer.css (linkado na linha 17 da página index, 18 da formulario e 19 da quem_somos e parceiros).
+  4)HTML: Utilizar <aside> - linha 93 da página parceiros e <article> - linha 124 da index, 98 da quem somos e 88 da quem somos-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN CSS Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/tipografia.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <!-- <link rel="icon" type="image/png" href="./images/favicon.png" /> -->
+  <!-- CDN jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div id="row1">
+      <a href="index.html"><img id="logo" src="./images/xxx.png" class="img-fluid" alt="logo Pet animal"></a>
+      <span id="frase_empresa" class="text-capitalize fw-bold h4">Artigos para animais de estimação</span>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" style="color:#8B6127;" fill="currentColor"
+          class="bi bi-truck" viewBox="0 0 16 16">
+          <path
+            d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+        </svg>
+        <span id="frase_frete" class="text-capitalize fw-bold">Frete grátis em porto alegre</span>
+      </div>
+    </div>
+    <div id="row2">
+      <nav id="barra_navegacao" class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <a class="navbar-brand" href="index.html">Pet Animal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+          aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav ml-5 mr-auto">
+            <li class="nav-item">
+              <a class="navbar-brand" href="index.html">Home <span class="sr-only">(página atual)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="quem_somos.html">Quem Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="formulario.html">Cadastro</a>
+            </li>
+            <li class="nav-item dropdown" id="pai_submenu">
+              <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Produtos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#colchonetes">Colchonetes</a>
+                <a class="dropdown-item" href="#cobertores">Cobertores</a>
+                <a class="dropdown-item" href="#cama">Camas</a>
+                <a class="dropdown-item" href="#mantinhas">Mantinhas</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Outlet</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="parceiros.html">Parceiros</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16" style="color:beige">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </form>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+  <main>
+    <section class="container-fluid mt-2">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000"
+        data-bs-touch="true" data-bs-pause="hover">
+        <!-- indicadores de passagem do carrossel -->
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleSlidesOnly" data-slide-to="1"></li>
+        </ol>
+        <!--  carrossel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./images/2.png" alt="Primeiro Slide">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/4.png" alt="Segundo Slide">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
+      </div>
+
+      <!-- Produtos -->
+      <section id="mensagem_empresa" class="container-fluid">
+        <div class="row">
+          <article class="col-6 mt-3">
+            <h3 class="text-center text-capitalize ">Nossos produtos</h3>
+            <p>Todos os produtos da Pet Animal são elaborados:
+            </p>
+            <ul id="lista_objetivos">
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: rgb(168, 177, 47)">
+                  <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg> visando a durabilidade do produto </li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: rgb(168, 177, 47)">
+                  <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg> focando na segurança</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: rgb(168, 177, 47)">
+                  <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg> garantindo conforto aos animais</li>
+              <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-heart-fill" viewBox="0 0 16 16" style="color: rgb(168, 177, 47)">
+                  <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg> buscando inovação e estilo</li>
+            </ul>
+          </article>
+          <div class="col-6 mt-3">
+            <h3 class="text-center text-capitalize ">no que acreditamos</h3>
+            <p>Que todos e todas podem contribuir para um mundo melhor:
+            </p>
+            <ul id="lista_acreditamos">
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-check-lg" viewBox="0 0 16 16" style="color: rgb(168, 177, 47);">
+                  <path
+                    d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z" />
+                </svg> economia local </li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-check-lg" viewBox="0 0 16 16" style="color: rgb(168, 177, 47);">
+                  <path
+                    d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z" />
+                </svg> causas locais</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-check-lg" viewBox="0 0 16 16" style="color: rgb(168, 177, 47);">
+                  <path
+                    d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z" />
+                </svg> valorização dos afetos</li>
+            </ul>
+            </article>
+          </div>
+      </section>
+
+      <!-- caminhas -->
+      <section id="produtos">
+        <div id="cama" class="row">
+          <div class="col-12">
+            <h3 class="text-center text-capitalize">Nossos produtos</h3>
+            <h4 id="titulo_camas">Caminhas</h3>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/cama_rainha.png" class="card-img-top img-fluid" alt="foto de modelo de cama 1">
+              <div class="card-body">
+                <h5 class="card-title">Cama Rainha</h5>
+                <p>Esse modelo de cama é ideal para gatos e cães de porte pequeno a médio.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/cama_rei.png" class="card-img-top" alt="foto de modelo de cama 1">
+              <div class="card-body">
+                <h5 class="card-title">Cama Rei</h5>
+                <p>Esse modelo de cama está disponível em dois tamanhos: para cães de porte médio ou grande.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/sofa_cama.png" class="card-img-top" alt="foto de modelo de cama 1">
+              <div class="card-body">
+                <h5 class="card-title">Sofá Cama</h5>
+                <p>Esse modelo é uma exclusividade da nossa marca. Traz estilo pra sua casa.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/cama_baby.png" class="card-img-top" alt="foto de modelo de cama 1">
+              <div class="card-body">
+                <h5 class="card-title">Cama Rainha</h5>
+                <p>Esse modelo de cama é ideal para gatos e cães pequenos e mais calmos. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- cobertores -->
+
+      <section id="cobertores" class="container row ml-auto mr-auto">
+        <div class="col-12">
+          <h3 class="text-center text-capitalize mt-4">Para mater a turma aquecida</h3>
+          <h4 id="titulo_cobertores">Cobertores</h3>
+        </div>
+        <div class="col-md-3 ml-auto">
+          <div class="card">
+            <img src="./images/cobertas1.png" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Cores</h5>
+              <p>Trazemos uma grande gama de cores, com certeza alguma teu bichano vai gostar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="./images/fofao_coberta.png" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Cobertas duplas</h5>
+              <p>O Fofão sabe de conforto. Com as nossas cobertinhas duplas e a caixinha de papelão ele tá satisfeito.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mr-auto">
+          <div class="card">
+            <img src="./images/pepe_rosa.jpeg" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Versátil</h5>
+              <p>As nossas cobertas também aquecem os nossos doguinhos vovôs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- colchonetes -->
+      <section id="colchonetes" class="row ml-auto mr-auto">
+        <div class="col-12">
+          <h3 class="text-center text-capitalize">Conforto no verão</h3>
+          <h4 id="titulo_colchonetes">Colchonetes</h3>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="./images/colchao.png" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Colchão</h5>
+              <p>Esse modelo é mais grosso podendo ser usado como uma cama.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="./images/colchonete_impermeavel.png" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Impermeável</h5>
+              <p>Esse modelo é ideal para evitar que a espuma interna molhe.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="./images/pituca_colchonete.png" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Colchonete</h5>
+              <p>Esse modelo é ideal para dias quentes ou colocar em cima do sofá/banco do carro.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="./images/colchao_colchonete.png" class="card-img-top" alt="foto de modelo de cama 1">
+            <div class="card-body">
+              <h5 class="card-title">Conjunto</h5>
+              <p>E claro, tu pode oferecer mais de um modelo ao mesmo tempo!!!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <!-- scroll top -->
+  <a id="scroll-top-btn" href="#row1" class="scrollToTop"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8B6127"
+      width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+      <path
+        d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+    </svg></a>
+
+  <footer>
+    <div id="itens_rodape">
+      <img id="logo_footer" src="./imagesxxx.png" alt="logo">
+      <span>Copyright &copy;, 2021.</span>
+      <div>
+        <a href="https://www.facebook.com/PetanimalOficial/"><img id="icone_face" src="./images/face_icon.png" alt="ícone do instagram"></a>
+        <a href="https://www.instagram.com/Petanimaloficial/"><img id="icone_instagram" src="./images/instagram_icon.png" alt="ícone do facebook"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDN JS Bootstrap -->
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+
+  <script src="./js/scroll_top.js"></script>
+</body>
+
+</html>

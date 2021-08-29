@@ -1,0 +1,12 @@
+main{
+    background-color: #f5e7d4;
+    color:#573b15;
+}
+#transicao_header_main{
+    height: 20px;
+    background: linear-gradient(0deg, rgba(245,231,212,1)0%, rgba(87,59,21,1)  100%);
+}
+
+article p{
+    text-indent: 1.5rem;
+}

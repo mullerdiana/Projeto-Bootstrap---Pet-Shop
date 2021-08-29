@@ -1,0 +1,24 @@
+/* footer */
+
+footer {
+    background-color: #573b15;
+    color: #f5e7d4;
+    margin-bottom: 0;
+}
+#itens_rodape{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+}
+#logo_footer{
+    height: 50px;
+    margin-left: 20px;
+}
+#icone_face, #icone_instagram {
+    height: 40px;
+    margin-left: 2px;
+    margin-right: 20px;
+    filter: grayscale(0.6);
+}
+
